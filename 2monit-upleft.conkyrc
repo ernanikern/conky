@@ -1,0 +1,45 @@
+
+conky.config = { 
+    background = true,
+    use_xft = true,
+    --font = '123:bold:size=20',
+    --font = 'Ubuntu:bold:italic:size=20',
+    xftalpha = 0.1,
+    update_interval = 1,
+    total_run_times = 0,
+
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour = '000000',
+    own_window_argb_visual = true, 
+    own_window_argb_value = 0,
+
+    double_buffer = true,
+    minimum_height = 200,
+    --maximum_width 500
+    draw_shades = true,
+    draw_outline = false,
+    draw_borders = false, 
+    draw_graph_borders = false,
+    default_color = 'white',
+    default_shade_color = 'black',
+    default_outline_color = 'green', 
+    alignment = 'top_left',
+    gap_x = 0,
+    gap_y = 10,
+    no_buffers = true,
+    uppercase = false, 
+    cpu_avg_samples = 2,
+    net_avg_samples = 1,
+    override_utf8_locale = true
+    --use_spacer = true
+}
+
+conky.text = [[
+    ${color EAEAEA}${font Ubuntu:bold:pixelsize=110}${time %H:%M}${font}
+    ${color FFA300}${font GE Inspira:bold:pixelsize=34}${time %a}, ${color EAEAEA}${font GE Inspira:pixelsize=34}${time %d %B} ${time %Y}${font}
+    ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}L. Avg: $color${loadavg} ${color FFA300}CPU $color${cpu}% ${color FFA300}RAM $color${memperc}% 
+]]
+

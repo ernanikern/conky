@@ -1,0 +1,109 @@
+---------------
+-- Settings
+--------------------
+conky.config = {
+    background = true,
+    use_xft = true,
+    font = 'Liberation Sans:bold:size=11',
+    xftalpha = 1,
+    update_interval = 1.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_hints = 'below,sticky',
+    double_buffer = true,
+    maximum_width = 280,
+    minimum_height = 1020,
+    draw_shades = true,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
+    default_color = 'ffffff',
+    default_shade_color = '000000',
+    default_outline_color = '828282',
+    alignment = 'top_right',
+    gap_x = 12,
+    gap_y = 0,
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 4,
+    override_utf8_locale = false,
+}
+    
+conky.text = [[
+    $alignc${offset 5}${font Xbka:bold:size=18}${color red}A R C H   L I N U X${font}${color}
+    ${hr}
+    ${offset 30}${font TypoGraphica:bold:size=16}${time %a, %d %b %y}${offset 9}${time %T}${font}${color}
+   
+    ${offset 15}Host:$alignr$nodename
+    ${offset 15}Kernel: $alignr${kernel}
+    ${offset 15}Architecture: $alignr${exec hostnamectl | grep Architecture | cut -d":" -f2}
+    ${offset 15}Uptime:$alignr$uptime
+    
+    ${font Taylor:bold:size=11}S Y S T E M    S T A T U S${font}
+    ${hr}
+    ${offset 15}CPU0: ${color orange}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color orange}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
+    ${offset 15}CPU2: ${color orange}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color orange}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
+    ${offset 15}RAM: ${alignr}${memperc}% ${color orange}${memgraph 12,90}${color}
+    ${voffset 5}${offset 15}Load Avg: $alignr${loadavg}
+    ${voffset 5}${offset 15}/root: ${alignr}${fs_used_perc /}% ${color green}${fs_bar 12,90 /}${color}
+    ${offset 15}/home: ${alignr}${fs_used_perc /home}% ${color green}${fs_bar 12,90 /home}${color}
+    ${offset 15}/Storage: ${alignr}${fs_used_perc /mnt/Storage}% ${color green}${fs_bar 12,90 /mnt/Storage}${color}
+    ${voffset 5}${offset 15}IP $alignr${addr enp3s0}
+    ${offset 15}Public IP $alignr${execi 60 curl ifconfig.me}
+    ${if_up tunsnx}${offset 15}IP VPN $alignr${addr tunsnx}${endif}
+    ${voffset 5}${offset 15}Down: $alignr${downspeed enp3s0} ${color #5C95C9}${downspeedgraph enp3s0 12,90 -l}${color}
+    ${offset 15}Up: $alignr${upspeed enp3s0} ${color #5C95C9}${upspeedgraph enp3s0 12,90 -l}${color}
+    ${if_up tunsnx}${offset 15}Down VPN: $alignr${downspeed tunsnx} ${color #A1AECB}${downspeedgraph tunsnx 12,90}${color}${endif}
+    ${if_up tunsnx}${offset 15}Up VPN: $alignr${upspeed tunsnx} ${color #A1AECB}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
+    ${voffset 5}${offset 15}GPU Status:
+    ${offset 15}Total Mem. $alignr ${color pink}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
+    ${offset 15}Used Mem. $alignr ${color pink}${exec /home/ernani/Dropbox/linux/conky/gpu_memory.sh}${color}
+    ${voffset 5}${offset 15}RAID Status: $alignr${color yellow}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
+    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color gray}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
+        
+    ${font Taylor:bold:size=11}S H O R T C U T    K E Y S${font}
+    ${hr}
+    ${color orange}Super ${color}+ ${stippled_hr}
+    ${color grey}Space ${color}- Rofi $alignr ${color grey}T${color} - Terminal
+    ${color grey}Alt + T ${color}- Drdn Term $alignr ${color grey}F ${color}- File Man
+    ${color grey}W${color} - Chrome $alignr ${color grey}K${color} - Kate
+    S${color} - Screenshot $alignr${color grey}H${color} - Task Man
+    ${color grey}L${color} - Lock Screen $alignr${color grey}V${color} - Vol Ctrl
+    ${color grey}D${color} - Display Sett $alignr${color orange}
+    Alt${color} + ${stippled_hr}
+    ${color grey}Space${color} - Main Menu 
+    ${color grey}F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag
+    ${color grey}F3${color} - App Finder $alignr ${color grey}
+    ${color grey}H ${color} - Audio HDMI $alignr${color grey}J${color} - Audio JBL
+    ${color grey}L${color} - Audio Logitech ${color orange} $alignr${color grey}B${color} - reset BT${color orange}
+    Ctrl${color} + ${stippled_hr}
+    ${color grey}L${color} - con. bt Log.X300 $alignr${color grey}J${color} - con. bt JBL
+    ${color grey}Shift L${color} - disc. Log $alignr${color grey}Shift J${color} - disc. JBL
+    
+]]    
+--    Super + Space$alignr Main Menu
+--    Super + t$alignr Terminal
+--    Super + Alt + t$alignr  Term Dropdown
+--    Super + f$alignr File Manager
+--    Super + w$alignr Web Browser
+--    Super + s$alignr Screenshot
+--    Super + h$alignr Task Manager
+--    Super + l$alignr Lock Screen
+--    Super + v$alignr Volume Control
+--    Super + d$alignr Display Settings
+--   Super + x$alignr Logout
+--    Alt + F1$alignr Alt Menu
+--    Alt + F2$alignr Run Dialog
+--    Alt + F3$alignr App Finder
+--    PrtSc$alignr Screenshot
+--]]
+
+-- ${if_mounted /mnt/MyBook}${offset 15}/MyBook: ${alignr}${fs_used_perc /mnt/MyBook}% ${color green}${fs_bar 12,90 /mnt/MyBook}${color}${endif}
+
+    --${font Taylor:bold:size=11}W E A T H E R${font}
+    --{hr}
+    --${offset 15}${weather http://xoap.weather.com/weather/local/ 
+    --last_update 30}

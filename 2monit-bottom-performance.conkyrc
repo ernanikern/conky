@@ -1,0 +1,107 @@
+--[[ For conky variables and commands use the terminal command:
+
+ man conky
+
+ Bunsen Labs Conky help threads
+ ------------------------------
+ Index » Scripts, Tutorials & Tips » Conky - Calendars / Clocks / Time
+ https://forums.bunsenlabs.org/viewtopic.php?id=516
+
+ Open a thread and Post conky questions in: Index » GUI & Applications
+ https://forums.bunsenlabs.org/viewforum.php?id=4
+
+ Display your completed conky and codes
+ Index » Scripts, Tutorials & Tips » Show us your conky
+ https://forums.bunsenlabs.org/viewtopic.php?id=512
+]]
+
+conky.config = {
+
+--  Begin Window Settings
+
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = '000000',
+	own_window_class = 'Conky',
+
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+
+	minimum_width = 1600, minimum_height = 0,
+	maximum_width = 1800,
+
+-- bl-conkypin, original value for gap_x: 0
+	gap_x = 30,-- l|r
+-- bl-conkypin, original value for gap_y: 45
+	gap_y = 35,-- u|d
+
+	alignment = 'bottom_left',
+
+--  End Window Settings
+--  Font Settings
+
+	use_xft = true,
+	font = 'Monospace:bold:size=10',
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+--  End Font Settings
+--  Colour Settings
+
+	draw_shades = true,
+	default_shade_color = 'black',
+	draw_outline = false,
+	default_outline_color = 'black',
+
+--	default_color = '678b8b',-- Beam green
+	default_color = 'orange',
+	color0 = 'B0E0E6',-- PowderBlue
+	color1 = '778899',-- LightSlateGray
+	color2 = 'D8BFD8',-- Thistle
+	color3 = '9ACD32',-- YellowGreen
+	color4 = 'FFA07A',-- LightSalmon
+	color5 = 'FFDEAD',-- NavajoWhite
+	color6 = '00BFFF',-- DeepSkyBlue
+	color7 = '5F9EA0',-- CadetBlue
+	color8 = 'BDB76B',-- DarkKhaki
+	color9 = 'C0C0C0',-- Silver
+
+--  End Colour Settings
+--  Borders Section
+
+	draw_borders = false,
+	stippled_borders = 5,
+	border_inner_margin = 5,
+	border_outer_margin = 0,
+	border_width = 2,
+	draw_graph_borders = true,
+
+--  End Borders Secton
+--  Miscellaneous Section
+
+	background = true,
+	use_spacer = 'right',
+	no_buffers = true,
+	short_units = false,
+	imlib_cache_size = 0,
+	double_buffer = true,
+
+--  End Miscellaneous Section
+
+	update_interval = 1,
+
+};
+
+conky.text = [[
+${color white}/Root ${color}${fs_used_perc /}% ${color white}of ${fs_size /}\
+   /Home ${color}${fs_used_perc /home}% ${color white}of ${fs_size /home}\
+   /Storage ${color}${fs_used_perc /mnt/Storage}% ${color white}of ${fs_size /mnt/Storage}\
+   CPU ${color}${cpu cpu0}% ${color white}@ ${freq_g}Ghz\
+   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}${color white}\
+   RAM ${color}${memperc}% ${color white}of ${memmax}\
+   Load Avg ${color}${loadavg}\
+   ${color white}Uptime: ${color}${uptime}\
+   ${color white}Bluetooth conn: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh} 
+]];
