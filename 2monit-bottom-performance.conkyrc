@@ -103,5 +103,6 @@ ${color white}/Root ${color}${fs_used_perc /}% ${color white}of ${fs_size /}\
    RAM ${color}${memperc}% ${color white}of ${memmax}\
    Load Avg ${color}${loadavg}\
    ${color white}Uptime: ${color}${uptime}\
-   ${color white}Bluetooth conn: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh} 
+   ${color white}BlueT: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh}\
+   ${color white}Áudio: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/show_audio.sh}
 ]];
