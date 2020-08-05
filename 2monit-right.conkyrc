@@ -77,11 +77,10 @@ conky.text = [[
     ${color grey}Space${color} - Main Menu 
     ${color grey}F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag
     ${color grey}F3${color} - App Finder $alignr ${color grey}
-    ${color grey}H ${color} - Audio HDMI $alignr${color grey}J${color} - Audio JBL
-    ${color grey}L${color} - Audio Logitech ${color orange} $alignr${color grey}B${color} - reset BT${color orange}
+    ${color grey}H | J | L${color} - Selec. audio $alignr${color grey}B${color} - reset BT${color orange}
     Ctrl${color} + ${stippled_hr}
-    ${color grey}L${color} - con. bt Log.X300 $alignr${color grey}J${color} - con. bt JBL
-    ${color grey}Shift L${color} - disc. Log $alignr${color grey}Shift J${color} - disc. JBL
+    ${color grey}H | J | L${color} - con. BT
+    ${color grey}Shift H | J | L${color} - disc. BT
     
 ]]    
 --    Super + Space$alignr Main Menu
