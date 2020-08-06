@@ -28,5 +28,5 @@ if [ "$powered" == "yes" ]; then
   if [ "$conn" == "no" ]; then
     echo "-"
   fi
-else echo "Bluetoothctl desativado."
+else echo "desativado"
 fi
