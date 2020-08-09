@@ -31,17 +31,17 @@ conky.config = {
     cpu_avg_samples = 4,
     override_utf8_locale = false,
 }
-    
+
 conky.text = [[
     $alignc${offset 5}${font Xbka:bold:size=18}${color red}A R C H   L I N U X${font}${color}
     ${hr}
     ${offset 30}${font TypoGraphica:bold:size=16}${time %a, %d %b %y}${offset 9}${time %T}${font}${color}
-   
+
     ${offset 15}Host:$alignr$nodename
     ${offset 15}Kernel: $alignr${kernel}
     ${offset 15}Architecture: $alignr${exec hostnamectl | grep Architecture | cut -d":" -f2}
     ${offset 15}Uptime:$alignr$uptime
-    
+
     ${font Taylor:bold:size=11}S Y S T E M    S T A T U S${font}
     ${hr}
     ${offset 15}CPU0: ${color orange}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color orange}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
@@ -63,26 +63,16 @@ conky.text = [[
     ${offset 15}Used Mem. $alignr ${color pink}${exec /home/ernani/Dropbox/linux/conky/gpu_memory.sh}${color}
     ${voffset 5}${offset 15}RAID Status: $alignr${color yellow}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
     ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color gray}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
-        
-    ${font Taylor:bold:size=11}S H O R T C U T    K E Y S${font}
+
+    ${font Taylor:bold:size=11}T O P  F I V E  P R O C S${font}
     ${hr}
-    ${color orange}Super ${color}+ ${stippled_hr}
-    ${color grey}Space ${color}- Rofi $alignr ${color grey}T${color} - Terminal
-    ${color grey}Alt + T ${color}- Drdn Term $alignr ${color grey}F ${color}- File Man
-    ${color grey}W${color} - Chrome $alignr ${color grey}K${color} - Kate
-    S${color} - Screenshot $alignr${color grey}H${color} - Task Man
-    ${color grey}L${color} - Lock Screen $alignr${color grey}V${color} - Vol Ctrl
-    ${color grey}D${color} - Display Sett $alignr ${color grey}C ${color} - Calc${color orange}
-    Alt${color} + ${stippled_hr}
-    ${color grey}Space${color} - Main Menu 
-    ${color grey}F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag
-    ${color grey}F3${color} - App Finder $alignr ${color grey}
-    ${color grey}H | J | L${color} - Selec. audio $alignr${color grey}B${color} - reset BT${color orange}
-    Ctrl${color} + ${stippled_hr}
-    ${color grey}H | J | L${color} - con. BT
-    ${color grey}Shift H | J | L${color} - disc. BT
-    
-]]    
+    ${offset 4}${color orange}Proc $alignr     PID   CPU  MEM$color
+    ${offset 5}${top_io name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%
+    ${offset 5}${top_io name 2} $alignr ${top pid 2} ${top cpu 2}% ${top mem 2}%
+    ${offset 5}${top_io name 3} $alignr ${top pid 3} ${top cpu 3}% ${top mem 3}%
+    ${offset 5}${top_io name 4} $alignr ${top pid 4} ${top cpu 4}% ${top mem 4}%
+    ${offset 5}${top_io name 5} $alignr ${top pid 5} ${top cpu 5}% ${top mem 5}%
+]]
 --    Super + Space$alignr Main Menu
 --    Super + t$alignr Terminal
 --    Super + Alt + t$alignr  Term Dropdown
@@ -104,5 +94,5 @@ conky.text = [[
 
     --${font Taylor:bold:size=11}W E A T H E R${font}
     --{hr}
-    --${offset 15}${weather http://xoap.weather.com/weather/local/ 
+    --${offset 15}${weather http://xoap.weather.com/weather/local/
     --last_update 30}
