@@ -99,7 +99,7 @@ ${color white}/Root ${color}${fs_used_perc /}% ${color white}of ${fs_size /}\
    /Home ${color}${fs_used_perc /home}% ${color white}of ${fs_size /home}\
    /Storage ${color}${fs_used_perc /mnt/Storage}% ${color white}of ${fs_size /mnt/Storage}\
    CPU ${color}${cpu cpu0}% ${color white}@ ${freq_g}Ghz\
-   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}${color white}\
+   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
    RAM ${color}${memperc}% ${color white}of ${memmax}\
    Load Avg ${color}${loadavg}\
    ${color white}Uptime: ${color}${uptime}\
