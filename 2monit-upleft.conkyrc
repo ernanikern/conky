@@ -45,7 +45,7 @@ conky.text = [[
     ${color orange} Super ${color}+ ${stippled_hr}
     ${color grey} Space ${color}- Rofi $alignr ${color grey}T${color} - Terminal
     ${color grey} Alt + T ${color}- Drdn Term $alignr ${color grey}F ${color}- File Man
-    ${color grey} W${color} - Chrome $alignr ${color grey}K${color} - Kate
+    ${color grey} W${color} - Chrome $alignr ${color grey}A${color} - Atom
      S${color} - Screenshot $alignr${color grey}H${color} - Task Man
     ${color grey} L${color} - Lock Screen $alignr${color grey}V${color} - Vol Ctrl
     ${color grey} D${color} - Display Sett $alignr ${color grey}C ${color} - Calc${color orange}
