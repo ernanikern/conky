@@ -42,7 +42,7 @@ conky.text = [[
     ${offset 15}Architecture: $alignr${exec hostnamectl | grep Architecture | cut -d":" -f2}
     ${offset 15}Uptime:$alignr$uptime
 
-    ${font Taylor:bold:size=11}S Y S T E M    S T A T U S${font}
+    ${font Enter Sansman:bold:italic:size=10}S Y S T E M    S T A T U S${font}
     ${hr}
     ${offset 15}CPU0: ${color orange}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color orange}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
     ${offset 15}CPU2: ${color orange}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color orange}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
@@ -64,7 +64,7 @@ conky.text = [[
     ${voffset 5}${offset 15}RAID Status: $alignr${color yellow}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
     ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color gray}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
 
-    ${font Taylor:bold:size=11}T O P  F I V E  P R O C S${font}
+    ${font Enter Sansman:bold:italic:size=10}T O P  5  P R O C S${font}
     ${hr}
     ${offset 4}${color orange}Proc $alignr     PID   CPU  MEM$color
     ${offset 5}${top_io name 1} $alignr ${top pid 1} ${top cpu 1}% ${top mem 1}%
@@ -92,7 +92,7 @@ conky.text = [[
 
 -- ${if_mounted /mnt/MyBook}${offset 15}/MyBook: ${alignr}${fs_used_perc /mnt/MyBook}% ${color green}${fs_bar 12,90 /mnt/MyBook}${color}${endif}
 
-    --${font Taylor:bold:size=11}W E A T H E R${font}
+    --${font Enter Sansman:bold:size=11}W E A T H E R${font}
     --{hr}
     --${offset 15}${weather http://xoap.weather.com/weather/local/
     --last_update 30}
