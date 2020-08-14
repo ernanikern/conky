@@ -34,7 +34,7 @@ conky.config = {
 }
 
 conky.text = [[
-    $alignc${offset 5}${font Xbka:bold:size=18}${color red}A R C H   L I N U X${font}${color}
+    $alignc${offset 5}${font Xbka:bold:size=18}${color CadetBlue}A R C H   L I N U X${font}${color}
     ${hr}
     ${offset 30}${font TypoGraphica:bold:size=16}${time %a, %d %b %y}${offset 9}${time %T}${font}${color}
 
