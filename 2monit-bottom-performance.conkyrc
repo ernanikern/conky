@@ -20,9 +20,9 @@ conky.config = {
 --  Begin Window Settings
 
 	own_window = true,
-	own_window_type = 'desktop',
+	own_window_type = 'normal',
 	own_window_transparent = true,
-	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+  own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 	own_window_colour = '000000',
 	own_window_class = 'Conky',
 
@@ -99,8 +99,8 @@ ${color white}/Root ${color}${fs_used_perc /}% ${color white}of ${fs_size /}\
    /Home ${color}${fs_used_perc /home}% ${color white}of ${fs_size /home}\
    /Storage ${color}${fs_used_perc /mnt/Storage}% ${color white}of ${fs_size /mnt/Storage}\
    CPU ${color}${cpu cpu0}% ${color white}@ ${freq_g}Ghz\
-   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
    RAM ${color}${memperc}% ${color white}of ${memmax}\
+   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
    Load Avg ${color}${loadavg}\
    ${color white}Uptime: ${color}${uptime}\
    ${color white}BlueT: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh}\
