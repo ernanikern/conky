@@ -49,7 +49,7 @@ conky.text = [[
      S${color} - Screenshot $alignr${color grey}H${color} - Task Man
     ${color grey} L${color} - Lock Screen $alignr${color grey}V${color} - Vol Ctrl
     ${color grey} D${color} - Display Sett $alignr ${color grey}C ${color} - Calc${color orange}
-    ${color grey} X${color} - Kill VPNTRT4 ${color orange}
+    ${color grey} X${color} - Kill VPNTRT4 ${color orange}$alignr ${color grey}P${color} - X-Plane
      Alt + ${color} ${stippled_hr}
     ${color grey} Space${color} - Main Menu
     ${color grey} F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag
