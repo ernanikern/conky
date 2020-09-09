@@ -33,9 +33,9 @@ conky.config = {
 	maximum_width = 1800,
 
 -- bl-conkypin, original value for gap_x: 0
-	gap_x = 30,-- l|r
+	gap_x = 20,-- l|r
 -- bl-conkypin, original value for gap_y: 45
-	gap_y = 35,-- u|d
+	gap_y = 0,-- u|d
 
 	alignment = 'bottom_left',
 
