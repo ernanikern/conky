@@ -16,7 +16,7 @@ if [ "$powered" == "yes" ]; then
     echo $devices | cut -d" " -f"$i" >> "$dir"/devices.txt
   done
   cat "$dir"/devices.txt | while read mac
-  do   
+  do
     if [ "$mac" == "" ]; then continue
     fi
     conn=`bluetoothctl info "$mac" | awk '/Connected:/ {print $2}'`
@@ -28,5 +28,5 @@ if [ "$powered" == "yes" ]; then
   if [ "$conn" == "no" ]; then
     echo "-"
   fi
-else echo "desativado"
+else echo "desat."
 fi

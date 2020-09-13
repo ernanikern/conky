@@ -33,7 +33,7 @@ conky.config = {
 	maximum_width = 1800,
 
 -- bl-conkypin, original value for gap_x: 0
-	gap_x = 20,-- l|r
+	gap_x = 5,-- l|r
 -- bl-conkypin, original value for gap_y: 45
 	gap_y = 0,-- u|d
 
@@ -72,10 +72,10 @@ conky.config = {
 --  Borders Section
 
 	draw_borders = false,
-	stippled_borders = 5,
-	border_inner_margin = 5,
+	stippled_borders = 0,
+	border_inner_margin = 0,
 	border_outer_margin = 0,
-	border_width = 2,
+	border_width = 0,
 	draw_graph_borders = true,
 
 --  End Borders Secton
