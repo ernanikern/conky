@@ -30,11 +30,12 @@ conky.config = {
     uppercase = false,
     cpu_avg_samples = 4,
     override_utf8_locale = false,
-    use_spacer = right
-}
+    use_spacer = right,
+    color0 = 'orange'
+  }
 
 conky.text = [[
-    $alignc${offset 5}${font Xbka:bold:size=18}${color CadetBlue}A R C H   L I N U X${font}${color}
+    $alignc${offset 5}${font Xbka:bold:size=18}${color0}A R C H   L I N U X${font}${color}
     ${hr}
     ${offset 30}${font TypoGraphica:bold:size=16}${time %a, %d %b %y}${offset 9}${time %T}${font}${color}
 
@@ -45,29 +46,29 @@ conky.text = [[
 
     ${font Enter Sansman:bold:italic:size=10}S Y S T E M    S T A T U S${font}
     ${hr}
-    ${offset 15}CPU0: ${color orange}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color orange}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
-    ${offset 15}CPU2: ${color orange}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color orange}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
-    ${offset 15}RAM: ${alignr}${memperc}% ${color orange}${memgraph 12,90}${color}
-    ${voffset 5}${offset 15}Load Avg: $alignr ${color lightblue}${loadavg}${color}
-    ${voffset 5}${offset 15}/root: ${alignr}${fs_used_perc /}% ${color green}${fs_bar 12,90 /}${color}
-    ${offset 15}/home: ${alignr}${fs_used_perc /home}% ${color green}${fs_bar 12,90 /home}${color}
-    ${offset 15}/Storage: ${alignr}${fs_used_perc /mnt/Storage}% ${color green}${fs_bar 12,90 /mnt/Storage}${color}
+    ${offset 15}CPU0: ${color0}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color0}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
+    ${offset 15}CPU2: ${color0}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color0}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
+    ${offset 15}RAM: ${alignr}${memperc}% ${color0}${memgraph 12,90}${color}
+    ${voffset 5}${offset 15}Load Avg: $alignr ${color0}${loadavg}${color}
+    ${voffset 5}${offset 15}/root: ${alignr}${fs_used_perc /}% ${color0}${fs_bar 12,90 /}${color}
+    ${offset 15}/home: ${alignr}${fs_used_perc /home}% ${color0}${fs_bar 12,90 /home}${color}
+    ${offset 15}/Storage: ${alignr}${fs_used_perc /mnt/Storage}% ${color0}${fs_bar 12,90 /mnt/Storage}${color}
     ${voffset 5}${offset 15}IP $alignr${addr enp3s0}
     ${offset 15}Public IP $alignr${execi 60 curl ifconfig.me}
     ${if_up tunsnx}${offset 15}IP VPN $alignr${addr tunsnx}${endif}
-    ${voffset 5}${offset 15}Down: $alignr${downspeed enp3s0} ${color #5C95C9}${downspeedgraph enp3s0 12,90 -l}${color}
-    ${offset 15}Up: $alignr${upspeed enp3s0} ${color #5C95C9}${upspeedgraph enp3s0 12,90 -l}${color}
-    ${if_up tunsnx}${offset 15}Down VPN: $alignr${downspeed tunsnx} ${color #A1AECB}${downspeedgraph tunsnx 12,90}${color}${endif}
-    ${if_up tunsnx}${offset 15}Up VPN: $alignr${upspeed tunsnx} ${color #A1AECB}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
+    ${voffset 5}${offset 15}Down: $alignr${downspeed enp3s0} ${color0}${downspeedgraph enp3s0 12,90 -l}${color}
+    ${offset 15}Up: $alignr${upspeed enp3s0} ${color0}${upspeedgraph enp3s0 12,90 -l}${color}
+    ${if_up tunsnx}${offset 15}Down VPN: $alignr${downspeed tunsnx} ${color0}${downspeedgraph tunsnx 12,90}${color}${endif}
+    ${if_up tunsnx}${offset 15}Up VPN: $alignr${upspeed tunsnx} ${color0}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
     ${voffset 5}${offset 15}GPU Status:
-    ${offset 15}Total Mem. $alignr ${color pink}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
-    ${offset 15}Used Mem. $alignr ${color pink}${exec /home/ernani/Dropbox/linux/conky/gpu_memory.sh}${color}
-    ${voffset 5}${offset 15}RAID Status: $alignr${color yellow}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
-    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color gray}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
+    ${offset 15}Total Mem. $alignr ${color0}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
+    ${offset 15}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_memory.sh}${color}
+    ${voffset 5}${offset 15}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
+    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
 
     ${font Enter Sansman:bold:italic:size=10}T O P  1 0  P R O C S${font}
     ${hr}
-    ${offset 4}${color orange}Proc                     PID      CPU      MEM$color
+    ${offset 4}${color0}Proc                     PID      CPU      MEM$color
     ${offset 5}${top_io name 1} ${goto 131} ${top pid 1} ${top cpu 1}% ${top mem 1}%
     ${offset 5}${top_io name 2} ${goto 131} ${top pid 2} ${top cpu 2}% ${top mem 2}%
     ${offset 5}${top_io name 3} ${goto 131} ${top pid 3} ${top cpu 3}% ${top mem 3}%

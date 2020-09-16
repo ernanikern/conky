@@ -1,21 +1,6 @@
-conky: desktop window (6c5) is root window
+conky: desktop window (1800028) is subwindow of root window (6c5)
 conky: window type - normal
-conky: drawing to created window (0x3800002)
+conky: drawing to created window (0x3000002)
 conky: drawing to double buffer
-conky: forked to background, pid is 1790
+conky: forked to background, pid is 3305524
 
-
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    13  100    13    0     0     59      0 --:--:-- --:--:-- --:--:--    59
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    13  100    13    0     0     54      0 --:--:-- --:--:-- --:--:--    58
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    13  100    13    0     0     59      0 --:--:-- --:--:-- --:--:--    59
-conky: '/home/ernani/.conky/2monit-bottom-performance.conkyrc' modified, reloading...
-conky: desktop window (2400028) is subwindow of root window (6c5)
-conky: window type - normal
-conky: drawing to created window (0x3800002)
-conky: drawing to double buffer
