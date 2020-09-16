@@ -35,7 +35,7 @@ conky.config = {
 -- bl-conkypin, original value for gap_x: 0
 	gap_x = 5,-- l|r
 -- bl-conkypin, original value for gap_y: 45
-	gap_y = 0,-- u|d
+	gap_y = -30,-- u|d
 
 	alignment = 'bottom_left',
 
