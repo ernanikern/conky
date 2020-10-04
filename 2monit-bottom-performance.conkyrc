@@ -20,7 +20,7 @@ conky.config = {
 --  Begin Window Settings
 
 	own_window = true,
-	own_window_type = 'normal',
+	own_window_type = 'desktop',
 	own_window_transparent = true,
   own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 	own_window_colour = '000000',
@@ -33,9 +33,9 @@ conky.config = {
 	maximum_width = 1800,
 
 -- bl-conkypin, original value for gap_x: 0
-	gap_x = 5,-- l|r
+	gap_x = 10,-- l|r
 -- bl-conkypin, original value for gap_y: 45
-	gap_y = -30,-- u|d
+	gap_y = 35,-- u|d
 
 	alignment = 'bottom_left',
 
