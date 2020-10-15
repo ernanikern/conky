@@ -95,9 +95,9 @@ conky.config = {
 };
 
 conky.text = [[
-${color white}/Root ${color}${fs_used_perc /}% ${color white}of ${fs_size /}\
-   /Home ${color}${fs_used_perc /home}% ${color white}of ${fs_size /home}\
-   /Storage ${color}${fs_used_perc /mnt/Storage}% ${color white}of ${fs_size /mnt/Storage}\
+${color white}/Root ${color}${execi 30 df -h | grep sda1 | awk '{print $5}'}% ${color white}of ${fs_size /}\
+   /Home ${color}${execi 30 df -h | grep "/home" | awk '{print $5}'}% ${color white}of ${fs_size /home}\
+   /Storage ${color}${execi 30 df -h | grep Storage | awk '{print $5}'}% ${color white}of ${fs_size /mnt/Storage}\
    CPU ${color}${cpu cpu0}% ${color white}@ ${freq_g}Ghz\
    RAM ${color}${memperc}% ${color white}of ${memmax}\
    GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
