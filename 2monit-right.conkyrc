@@ -32,7 +32,8 @@ conky.config = {
     cpu_avg_samples = 4,
     override_utf8_locale = false,
     use_spacer = right,
-    color0 = 'orange'
+    color0 = 'orange',
+    format_human_readable = true
   }
 
 conky.text = [[
@@ -51,9 +52,9 @@ conky.text = [[
     ${offset 15}CPU2: ${color0}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color0}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
     ${offset 15}RAM: ${alignr}${memperc}% ${color0}${memgraph 12,90}${color}
     ${voffset 5}${offset 15}Load Avg: $alignr ${color0}${loadavg}${color}
-    ${voffset 5}${offset 15}/root: ${alignr}${execi 30 df -h | grep sda1 | awk '{print $5}'} ${color0}${fs_bar 12,90 /}${color}
-    ${offset 15}/home: ${alignr}${execi 30 df -h | grep home| awk '{print $5}'} ${color0}${fs_bar 12,90 /home}${color}
-    ${offset 15}/Storage: ${alignr}${execi 30 df -h | grep Storage | awk '{print $5}'} ${color0}${fs_bar 12,90 /mnt/Storage}${color}
+    ${voffset 5}${offset 15}/root: ${alignr}${execi 30 df -h | grep sda1 | awk '{print $5}'} ${color0}${execbar 12,90 df -h |grep sda1 | awk '{print $5}'}${color}
+    ${offset 15}/home: ${alignr}${execi 30 df -h | grep home| awk '{print $5}'} ${color0}${execbar 12,90 df -h |grep "/home" | awk '{print $5}'}${color}
+    ${offset 15}/Storage: ${alignr}${execi 30 df -h | grep Storage | awk '{print $5}'} ${color0}${execbar 12,90 df -h |grep Storage | awk '{print $5}'}${color}
     ${voffset 5}${offset 15}IP $alignr${addr enp3s0}
     ${offset 15}Public IP $alignr${execi 60 curl ifconfig.me}
     ${if_up tunsnx}${offset 15}IP VPN $alignr${addr tunsnx}${endif}

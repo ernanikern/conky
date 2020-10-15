@@ -91,6 +91,7 @@ conky.config = {
 --  End Miscellaneous Section
 
 	update_interval = 1,
+  format_human_readable = true
 
 };
 
