@@ -64,7 +64,7 @@ conky.text = [[
     ${if_up tunsnx}${offset 15}Up VPN: $alignr${upspeed tunsnx} ${color0}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
     ${voffset 5}${offset 15}GPU Status:
     ${offset 15}Total Mem. $alignr ${color0}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
-    ${offset 15}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_memory.sh}${color}
+    ${offset 15}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color}
     ${voffset 5}${offset 15}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
     ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
 

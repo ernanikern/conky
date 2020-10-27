@@ -8,9 +8,11 @@ availmem=`glxinfo -B | grep "Currently available dedicated video memory" | cut -
 
 usedperc=`echo $availmem $totalmem | awk '{print 100 - ($1 / $2 * 100)}'`
 
-echo "$usedperc%"
+#echo "$usedperc%"
 
-#usedpercint=`echo $usedperc | cut -d"." -f1`
+usedpercint=`echo $usedperc | cut -d"." -f1`
 #echo "usedperc = $usedpercint%"
 
 #echo "$usedpercint% of$totalmem"
+
+echo "$usedpercint %"
