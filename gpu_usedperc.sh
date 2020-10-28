@@ -15,4 +15,4 @@ usedpercint=`echo $usedperc | cut -d"." -f1`
 
 #echo "$usedpercint% of$totalmem"
 
-echo "$usedpercint %"
+echo "$usedpercint%"
