@@ -26,7 +26,7 @@ conky.config = {
     default_bar_size = '12 90',
     alignment = 'top_right',
     gap_x = 12,
-    gap_y = 0,
+    gap_y = 1100,
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 4,
@@ -55,6 +55,7 @@ conky.text = [[
     ${voffset 5}${offset 15}/root: ${alignr}${execi 60 df -h | grep sda1 | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep sda1 | awk '{print $5}'}${color}
     ${offset 15}/home: ${alignr}${execi 60 df -h | grep home| awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep "/home" | awk '{print $5}'}${color}
     ${offset 15}/Storage: ${alignr}${execi 60 df -h | grep Storage | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep Storage | awk '{print $5}'}${color}
+    ${offset 15}/Backup: ${alignr}${execi 60 df -h | grep Backup | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep Backup | awk '{print $5}'}${color}
     ${voffset 5}${offset 15}IP $alignr${addr enp3s0}
     ${offset 15}Public IP $alignr${execi 60 curl ifconfig.me}
     ${if_up tunsnx}${offset 15}IP VPN $alignr${addr tunsnx}${endif}
@@ -65,8 +66,8 @@ conky.text = [[
     ${voffset 5}${offset 15}GPU Status:
     ${offset 15}Total Mem. $alignr ${color0}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
     ${offset 15}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color}
-    ${voffset 5}${offset 15}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
-    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
+#    ${voffset 5}${offset 15}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
+#    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
 
     ${font Enter Sansman:bold:italic:size=10}T O P  1 0  P R O C S${font}
     ${hr}

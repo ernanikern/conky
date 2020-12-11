@@ -28,7 +28,7 @@ conky.config = {
     default_outline_color = 'green',
     alignment = 'top_left',
     gap_x = 0,
-    gap_y = 10,
+    gap_y = 1065,
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 2,
@@ -40,8 +40,8 @@ conky.config = {
 conky.text = [[
     ${color EAEAEA}${font Ubuntu:bold:pixelsize=110}${time %H:%M}${font}
     ${color FFA300}${font GE Inspira:bold:pixelsize=34}${time %a}, ${color EAEAEA}${font GE Inspira:pixelsize=34}${time %d %B} ${time %Y}${font}
-    ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}L. Avg: $color${loadavg} ${color FFA300}CPU $color${cpu}% ${color FFA300}RAM $color${memperc}%
-    ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300} S H O R T C U T    K E Y S${font Ubuntu:pixelsize=13}
+    ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}L. Avg: $color${loadavg} ${color FFA300}  CPU $color${cpu}% ${color FFA300}  RAM $color${memperc}%
+    ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}S H O R T C U T    K E Y S${font Ubuntu:pixelsize=13}
     ${color orange} Super +${color} ${stippled_hr}
     ${color grey} Space ${color}- Rofi $alignr ${color grey}T${color} - Terminal
     ${color grey} Alt + T ${color}- Drdn Term $alignr ${color grey}F ${color}- File Man
@@ -54,7 +54,7 @@ conky.text = [[
     ${color grey} Space${color} - Main Menu
     ${color grey} F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag
     ${color grey} F3${color} - App Finder $alignr ${color grey}
-    ${color grey} H | J | L${color} - Selec. audio $alignr${color grey}B${color} - reset BT${color orange}
+    ${color grey} H | J | L${color} - Selec. audio $alignr${color grey}B${color} - reset USB${color orange}
      Ctrl +${color} ${stippled_hr}
     ${color grey} H | J | L${color} - con. BT $alignr${color grey}Shift H | J | L${color} - disc. BT
 ]]
