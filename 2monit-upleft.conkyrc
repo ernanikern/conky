@@ -38,7 +38,7 @@ conky.config = {
 }
 
 conky.text = [[
-    ${color EAEAEA}${font Ubuntu:bold:pixelsize=110}${time %H:%M}${font}
+    ${offset 30}${color EAEAEA}${font Ubuntu:bold:pixelsize=110}${time %H:%M}${font}
     ${color FFA300}${font GE Inspira:bold:pixelsize=34}${time %a}, ${color EAEAEA}${font GE Inspira:pixelsize=34}${time %d %B} ${time %Y}${font}
     ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}L. Avg: $color${loadavg} ${color FFA300}  CPU $color${cpu}% ${color FFA300}  RAM $color${memperc}%
     ${voffset 9}${font Ubuntu:pixelsize=16}${color FFA300}S H O R T C U T    K E Y S${font Ubuntu:pixelsize=13}
@@ -50,6 +50,7 @@ conky.text = [[
     ${color grey} L${color} - Lock Screen $alignr${color grey}V${color} - Vol Ctrl
     ${color grey} D${color} - Display Sett $alignr ${color grey}C ${color} - Calc${color orange}
     ${color grey} X${color} - Kill VPNTRT4 ${color grey} $alignr B ${color} - Virtualbox${color orange}
+    ${color grey} P${color} - X-Plane ${color orange} 
      Alt + ${color} ${stippled_hr}
     ${color grey} Space${color} - Main Menu
     ${color grey} F1${color} - Alt Menu $alignr ${color grey}F2${color} - Run Diag

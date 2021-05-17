@@ -100,7 +100,7 @@ ${color white}/Root ${color}${execi 30 df -h | grep sda1 | awk '{print $5}'} ${c
   /Home ${color}${execi 30 df -h | grep "/home" | awk '{print $5}'} ${color white}of ${fs_size /home}\
  /Storage ${color}${execi 30 df -h | grep Storage | awk '{print $5}'} ${color white}of ${fs_size /mnt/Storage}\
  /Backup ${color}${execi 30 df -h | grep Backup | awk '{print $5}'} ${color white}of ${fs_size /mnt/Backup}\
- CPU ${color}${cpu cpu0}% ${color white}@ ${freq_g}Ghz\
+ CPU ${color}${cpu cpu0}% ${color white}@${freq_g}Ghz\
   RAM ${color}${memperc}% ${color white}of ${memmax}\
   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
   Load Avg ${color}${loadavg}\

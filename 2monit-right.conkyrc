@@ -39,7 +39,8 @@ conky.config = {
 conky.text = [[
     $alignc${offset 5}${font Xbka:bold:size=18}${color0}A R C H   L I N U X${font}${color}
     ${hr}
-    ${offset 30}${font TypoGraphica:bold:size=16}${time %a, %d %b %y}${offset 9}${time %T}${font}${color}
+    ${alignc}${font Enter Sansman:bold:size=16}${time %a, %d %b %y}
+    ${alignc}${time %T}${font}${color}
 
     ${offset 15}Host:$alignr$nodename
     ${offset 15}Kernel: $alignr${kernel}
