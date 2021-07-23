@@ -4,7 +4,7 @@
 conky.config = {
     background = true,
     use_xft = true,
-    font = 'Liberation Sans:bold:size=11',
+    font = 'Ubuntu:bold:size=11',
     xftalpha = 1,
     update_interval = 1.0,
     total_run_times = 0,
@@ -15,7 +15,7 @@ conky.config = {
     own_window_hints = 'below,sticky',
     double_buffer = true,
     maximum_width = 280,
-    minimum_height = 930,
+    minimum_height = 940,
     draw_shades = true,
     draw_outline = false,
     draw_borders = false,
@@ -26,7 +26,7 @@ conky.config = {
     default_bar_size = '12 90',
     alignment = 'top_right',
     gap_x = 12,
-    gap_y = 1100,
+    gap_y = 0,
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 4,
@@ -42,33 +42,32 @@ conky.text = [[
     ${alignc}${font Enter Sansman:bold:size=16}${time %a, %d %b %y}
     ${alignc}${time %T}${font}${color}
 
-    ${offset 15}Host:$alignr$nodename
-    ${offset 15}Kernel: $alignr${kernel}
-    ${offset 15}Architecture: $alignr${exec hostnamectl | grep Architecture | cut -d":" -f2}
-    ${offset 15}Uptime:$alignr$uptime
+    ${offset 10}Host:$alignr$nodename
+    ${offset 10}Kernel: $alignr${kernel}
+    ${offset 10}Architecture: $alignr${exec hostnamectl | grep Architecture | cut -d":" -f2}
+    ${offset 10}Uptime:$alignr$uptime
 
     ${font Enter Sansman:bold:italic:size=10}S Y S T E M    S T A T U S${font}
     ${hr}
-    ${offset 15}CPU0: ${color0}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color0}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
-    ${offset 15}CPU2: ${color0}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color0}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
-    ${offset 15}RAM: ${alignr}${memperc}% ${color0}${memgraph 12,90}${color}
-    ${voffset 5}${offset 15}Load Avg: $alignr ${color0}${loadavg}${color}
-    ${voffset 5}${offset 15}/root: ${alignr}${execi 60 df -h | grep sda1 | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep sda1 | awk '{print $5}'}${color}
-    ${offset 15}/home: ${alignr}${execi 60 df -h | grep home| awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep "/home" | awk '{print $5}'}${color}
-    ${offset 15}/Storage: ${alignr}${execi 60 df -h | grep Storage | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep Storage | awk '{print $5}'}${color}
-    ${offset 15}/Backup: ${alignr}${execi 60 df -h | grep Backup | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep Backup | awk '{print $5}'}${color}
-    ${voffset 5}${offset 15}IP $alignr${addr enp3s0}
-    ${offset 15}Public IP $alignr${execi 60 curl ifconfig.me}
-    ${if_up tunsnx}${offset 15}IP VPN $alignr${addr tunsnx}${endif}
-    ${voffset 5}${offset 15}Down: $alignr${downspeed enp3s0} ${color0}${downspeedgraph enp3s0 12,90 -l}${color}
-    ${offset 15}Up: $alignr${upspeed enp3s0} ${color0}${upspeedgraph enp3s0 12,90 -l}${color}
-    ${if_up tunsnx}${offset 15}Down VPN: $alignr${downspeed tunsnx} ${color0}${downspeedgraph tunsnx 12,90}${color}${endif}
-    ${if_up tunsnx}${offset 15}Up VPN: $alignr${upspeed tunsnx} ${color0}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
-    ${voffset 5}${offset 15}GPU Status:
-    ${offset 15}Total Mem. $alignr ${color0}${execi 5 glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
-    ${offset 15}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color}
-#    ${voffset 5}${offset 15}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
-#    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 15}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
+    ${offset 10}CPU0: ${color0}${cpu cpu0}% ${offset -50}${voffset 17}${cpugauge cpu0 35,65}${color}              ${voffset -16}CPU1: ${color0}${cpu cpu1}% ${offset -50}${voffset 17}${cpugauge cpu1 35,65}${color}
+    ${offset 10}CPU2: ${color0}${cpu cpu2}% ${offset -50}${voffset 17}${cpugauge cpu2 35,65}${color}              ${voffset -16}CPU3: ${color0}${cpu cpu3}% ${offset -50}${voffset 17}${cpugauge cpu3 35,65}${color}${offset 0}
+    ${offset 10}RAM: ${alignr}${memperc}% ${color0}${memgraph 12,90}${color}
+    ${voffset 5}${offset 10}Load Avg: $alignr ${color0}${loadavg}${color}
+    ${voffset 5}${offset 10}/: ${alignr}${execi 60 df -h | grep sda2 | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep sda2 | awk '{print $5}'}${color}
+    ${offset 10}/home: ${alignr}${execi 60 df -h | grep home| awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep "/home" | awk '{print $5}'}${color}
+    ${offset 10}/storage: ${alignr}${execi 60 df -h | grep storage | awk '{print $5}'} ${color0}${execibar 60 12,90 df -h |grep storage | awk '{print $5}'}${color}
+    ${voffset 5}${offset 10}IP $alignr${addr enp5s0f0}
+    ${offset 10}Public IP $alignr${execi 60 curl ifconfig.me}
+    ${if_up tunsnx}${offset 10}IP VPN $alignr${addr tunsnx}${endif}
+    ${voffset 5}${offset 10}Down: $alignr${downspeed enp5s0f0} ${color0}${downspeedgraph enp5s0f0 12,90 -l}${color}
+    ${offset 10}Up: $alignr${upspeed enp5s0f0} ${color0}${upspeedgraph enp5s0f0 12,90 -l}${color}
+    ${if_up tunsnx}${offset 10}Down VPN: $alignr${downspeed tunsnx} ${color0}${downspeedgraph tunsnx 12,90}${color}${endif}
+    ${if_up tunsnx}${offset 10}Up VPN: $alignr${upspeed tunsnx} ${color0}${upspeedgraph tunsnx 12,90 -l}${color}${endif}
+    ${voffset 5}${offset 10}GPU Status:
+    ${offset 10}Total Mem. $alignr ${color0}${execi 5 glxinfo -B | grep "Total available" | cut -d":" -f2 | cut -d"M" -f1} MB${color}
+    ${offset 10}Used Mem. $alignr ${color0}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color}
+#    ${voffset 5}${offset 10}RAID Status: $alignr${color0}${exec /home/ernani/Dropbox/linux/conky/raid_short.sh}${color}
+#    ${voffset -17}${font Liberation Sans:bold:size=10}${offset 10}${color0}${exec /home/ernani/Dropbox/linux/conky/raid_status.sh}${font}${color}
 
     ${font Enter Sansman:bold:italic:size=10}T O P  1 0  P R O C S${font}
     ${hr}
@@ -102,9 +101,9 @@ conky.text = [[
 --    PrtSc$alignr Screenshot
 --]]
 
--- ${if_mounted /mnt/MyBook}${offset 15}/MyBook: ${alignr}${fs_used_perc /mnt/MyBook}% ${color green}${fs_bar 12,90 /mnt/MyBook}${color}${endif}
+-- ${if_mounted /mnt/MyBook}${offset 10}/MyBook: ${alignr}${fs_used_perc /mnt/MyBook}% ${color green}${fs_bar 12,90 /mnt/MyBook}${color}${endif}
 
     --${font Enter Sansman:bold:size=11}W E A T H E R${font}
     --{hr}
-    --${offset 15}${weather http://xoap.weather.com/weather/local/
+    --${offset 10}${weather http://xoap.weather.com/weather/local/
     --last_update 30}

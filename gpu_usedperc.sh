@@ -1,6 +1,6 @@
 #!/bin/bash
 
-totalmem=`glxinfo -B | grep "Video memory" | cut -d":" -f2 | cut -d"M" -f1`
+totalmem=`glxinfo -B | grep "Total available" | cut -d":" -f2 | cut -d"M" -f1`
 availmem=`glxinfo -B | grep "Currently available dedicated video memory" | cut -d":" -f2 | cut -d"M" -f1`
 
 #echo "totalmem = _ $totalmem _"
