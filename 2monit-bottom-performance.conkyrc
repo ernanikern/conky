@@ -103,9 +103,9 @@ ${color white}/ ${color}${execi 60 df -h | grep sda2 | awk '{print $5}'} ${color
   RAM ${color}${memperc}% ${color white}of ${memmax}\
   GPU ${color}${exec /home/ernani/Dropbox/linux/conky/gpu_usedperc.sh}${color white} of ${exec /home/ernani/Dropbox/linux/conky/gpu_totalmem.sh}\
   Load Avg ${color}${loadavg}\
+  ${color white}  BT: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh}\
+  ${color white}  Áudio: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/show_audio.sh}
 ]];
 
 --   /Backup ${color}${execi 60 df -h | grep Backup | awk '{print $5}'} ${color white}of ${fs_size /mnt/Backup}\
 --  ${color white}/var ${color}${execi 60 df -h | grep sdb2 | awk '{print $5}'} ${color white}of ${fs_size /var}\
---  ${color white}  BT: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/bluetooth_conn.sh}\
---  ${color white}  Áudio: ${color}${execi 7 /home/ernani/Dropbox/linux/conky/show_audio.sh}
