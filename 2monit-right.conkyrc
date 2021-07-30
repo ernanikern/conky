@@ -15,7 +15,7 @@ conky.config = {
     own_window_hints = 'below,sticky',
     double_buffer = true,
     maximum_width = 280,
-    minimum_height = 940,
+    minimum_height = 1040,
     draw_shades = true,
     draw_outline = false,
     draw_borders = false,
@@ -30,7 +30,7 @@ conky.config = {
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 4,
-    override_utf8_locale = false,
+    override_utf8_locale = true,
     use_spacer = right,
     color0 = 'orange',
     format_human_readable = true
@@ -83,6 +83,12 @@ conky.text = [[
     ${offset 5}${top_io name 9} ${goto 131} ${top pid 9} ${top cpu 9}% ${top mem 9}%
     ${offset 5}${top_io name 10} ${goto 131} ${top pid 10} ${top cpu 10}% ${top mem 10}%
 
+    ${font Enter Sansman:bold:italic:size=10}K E Y S${font}
+    ${hr}
+##    ${offset 4}${color0}Super + space $alignr$color Rofi
+    ${offset 4}${color0}Ctrl + Shift + w $alignr$color VM W10
+    ${offset 4}${color0}Ctrl + l $alignr$color BT Log.X300
+    ${offset 4}${color0}Alt + l $alignr$color Áudio Log.X300
 ]]
 --    Super + Space$alignr Main Menu
 --    Super + t$alignr Terminal
